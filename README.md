@@ -21,7 +21,7 @@ Take some minutes to understand, in broad terms, how the API works. If you do no
 
 ```python
 # Initialize a translator with a phrase
-translator = PigLatinTranslator.PigLatinTranslator("This is a phrase")
+translator = PigLatin.PigLatin("This is a phrase")
 # Get the phrase
 phrase = translator.get_phrase()
 # Get the Pig Latin translation
@@ -37,8 +37,8 @@ Remember to read and implement the user stories once at a time (in the provided 
 A translator (from English to Pig Latin) takes a phrase as the input. The phrase is represented as a string where words are separated by white spaces.
 
 **Requirement:** 
-* Implement `PigLatinTranslator.PigLatinTranslator(self, phrase: str)` to create a translator that takes a phrase as the input. 
-* Implement `PigLatinTranslator.get_phrase(self) -> str` to let anyone get the input phrase from the translator.
+* Implement `PigLatin.PigLatin(self, phrase: str)` to create a translator that takes a phrase as the input. 
+* Implement `PigLatin.get_phrase(self) -> str` to let anyone get the input phrase from the translator.
  
 **Example:** 
 * The translator takes as the input the phrase “hello world”. Anyone gets the input phrase: “hello world”.
@@ -47,7 +47,7 @@ A translator (from English to Pig Latin) takes a phrase as the input. The phrase
 The translator translates an input phrase into _Pig Latin_. The input phrase can be an empty string. When this happens, the result of the translation is “nil”.
 
 **Requirement:** 
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate an empty string.
+* Implement `PigLatin.translate(self) -> str` to let the translator translate an empty string.
 
 **Example:** 
 * The translation of an empty string is “nil”.
@@ -59,7 +59,7 @@ The input phrase can be a single word starting with a vowel. In that case, the t
 * If the word ends with a consonant, append “ay” to the and of the word.
 
 **Requirement:** 
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate a word starting with a vowel.
+* Implement `PigLatin.translate(self) -> str` to let the translator translate a word starting with a vowel.
 
 **Examples:** 
 * The translation of “any” is “anynay”.
@@ -71,7 +71,7 @@ The input phrase can be a single word starting with a single consonant (note tha
 * Remove the consonant from the beginning of the word and add it to the end of the word. Finally, append “ay” to the end of the resulting word.
 
 **Requirement:** 
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate a word starting with a single consonant.
+* Implement `PigLatin.translate(self) -> str` to let the translator translate a word starting with a single consonant.
 
 **Example:** 
 * The translation of “hello” is “ellohay”.
@@ -81,7 +81,7 @@ The input phrase can be a single word starting with more consonants. In that cas
 * Remove the consonants from the beginning of the word and add them to the end of the word. Finally, append “ay” to the end of the resulting word.
 
 **Requirement:** 
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate a word starting with more consonants.
+* Implement `PigLatin.translate(self) -> str` to let the translator translate a word starting with more consonants.
 
 **Example:** 
 * The translation of “known” is “ownknay”.
@@ -90,7 +90,7 @@ The input phrase can be a single word starting with more consonants. In that cas
 The input phrase can contain more words (separated by white spaces). In that case, the translator applies the translation rules (reported in User Stories 3-5) to the single words. Moreover, for composite words (those separated by a “-”), the translation rules apply to the single words.
 
 **Requirement:** 
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate a phrase containing more words, as well as composite words. 
+* Implement `PigLatin.translate(self) -> str` to let the translator translate a phrase containing more words, as well as composite words. 
 
 **Examples:** 
 * The translation of “hello world” is “ellohay orldway”. 
@@ -100,7 +100,7 @@ The input phrase can contain more words (separated by white spaces). In that cas
 The input phrase can contain punctuation marks. In that case, the translator applies the translation rules to the single and composite words while preserving the punctuation marks. Only the following punctuation marks are allowed: point, comma, semi-colon, colon, apostrophe, question mark, exclamation mark, and round parenthesis.
 
 **Requirement:**  
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate a phrase containing the allowed punctuation marks. For punctuation marks not allowed, raise a `PigLatinError`.
+* Implement `PigLatin.translate(self) -> str` to let the translator translate a phrase containing the allowed punctuation marks. For punctuation marks not allowed, raise a `PigLatinError`.
 
 **Example:** 
 * The translation of “hello world!” is “ellohay orldway!”.
@@ -109,7 +109,7 @@ The input phrase can contain punctuation marks. In that case, the translator app
 The input phrase can contain upper- and title-case words. In those cases, the translator applies the translation rules to the single and composite words while preserving the upper- and title-cases. Cases different from upper- and title-cases are not allowed (e.g., “biRd”).
 
 **Requirement:** 
-* Implement `PigLatinTranslator.translate(self) -> str` to let the translator translate a phrase containing upper- and title-case words. For cases different from upper- and title-cases, raise a `PigLatinError`.
+* Implement `PigLatin.translate(self) -> str` to let the translator translate a phrase containing upper- and title-case words. For cases different from upper- and title-cases, raise a `PigLatinError`.
 
 **Example:** 
 * The translation of “APPLE” (upper case) is “APPLEYAY”. The translation of “Hello” (title case) is “Ellohay”.
